@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://samadul2011.github.io/nahar-apps/sitemap.xml
