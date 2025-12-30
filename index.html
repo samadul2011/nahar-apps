@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নাহার অ্যাপস - বাংলাদেশের জন্য ফ্রি অ্যাপস</title>
+    <meta name="description" content="বাংলাদেশের জন্য ফ্রি অ্যান্ড্রয়েড অ্যাপ্লিকেশন। শিশু গণিত, ব্যাকরণ সহায়ক, বাংলা ক্যালকুলেটর, BMI ক্যালকুলেটর ডাউনলোড করুন।">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 30px;
+        }
+        
+        .app-card {
+            background: white;
+            border: 1px solid #e1e4e8;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .app-card h3 {
+            color: #1a2980;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #26d0ce;
+            padding-bottom: 10px;
+        }
+        
+        .app-card p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(26, 41, 128, 0.3);
+        }
+        
+        .instructions {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px;
+            border-left: 5px solid #26d0ce;
+        }
+        
+        .instructions h4 {
+            color: #1a2980;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            background: #1a2980;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-top: 5px solid #26d0ce;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 15px;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+            opacity: 0.9;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🇧🇩 নাহার অ্যাপস</h1>
+            <p>বাংলাদেশের ব্যবহারকারীদের জন্য ফ্রি ও কার্যকরী অ্যান্ড্রয়েড অ্যাপ্লিকেশন</p>
+        </div>
+        
+        <div class="apps-grid">
+            <!-- App 1 -->
+            <div class="app-card">
+                <h3>শিশু গণিত (Shishu Gonit)</h3>
+                <p>বাংলাদেশি শিশুদের জন্য গণিত শেখার ইন্টারেক্টিভ অ্যাপ। সংখ্যা চেনা, যোগ-বিয়োগ, গুণ-ভাগ সহজ উপায়ে শিখুন।</p>
+                <a href="shishu-gonit-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~5MB | ভার্সন: 1.0</p>
+            </div>
+            
+            <!-- App 2 -->
+            <div class="app-card">
+                <h3>ব্যাকরণ সহায়ক (Grammar Sahayok)</h3>
+                <p>বাংলা ভাষার ব্যাকরণ শেখার সম্পূর্ণ গাইড। বর্ণমালা, শব্দ গঠন, বাক্য গঠন সহ বাংলা ভাষায় দক্ষতা বৃদ্ধি করুন।</p>
+                <a href="grammar-sahayok-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~6MB | ভার্সন: 1.0</p>
+            </div>
+            
+            <!-- App 3 -->
+            <div class="app-card">
+                <h3>বাংলা ক্যালকুলেটর</h3>
+                <p>বাংলা ইন্টারফেস সহ উন্নত ক্যালকুলেটর। সাধারণ ও বৈজ্ঞানিক গণনা, বাংলা সংখ্যা প্রদর্শন, অফলাইন কার্যকারিতা।</p>
+                <a href="bengali-calculator-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~4MB | ভার্সন: 1.0</p>
+            </div>
+            
+            <!-- App 4 -->
+            <div class="app-card">
+                <h3>BMI ক্যালকুলেটর</h3>
+                <p>স্বাস্থ্য পর্যবেক্ষণের জন্য Body Mass Index গণনাকারী। উচ্চতা-ওজন অনুপাত, স্বাস্থ্য পরামর্শ, ট্র্যাকিং সিস্টেম।</p>
+                <a href="bmi-calculator-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
+                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~3MB | ভার্সন: 1.0</p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h4>📱 ইন্সটলেশন নির্দেশিকা:</h4>
+            <ol>
+                <li>উপরে ডাউনলোড বাটনে ক্লিক করুন</li>
+                <li>APK ফাইলটি আপনার ডিভাইসে ডাউনলোড হবে</li>
+                <li>ডাউনলোড সম্পূর্ণ হলে ফাইলটিতে ট্যাপ করুন</li>
+                <li>"অজানা সোর্স" অনুমতি দিন (প্রথমবারের জন্য)</li>
+                <li>ইন্সটলেশন সম্পন্ন করুন এবং অ্যাপ খুলুন</li>
+            </ol>
+        </div>
+        
+        <div class="contact-info">
+            <h3>📞 যোগাযোগ করুন</h3>
+            <p><strong>ডেভেলপার:</strong> MD SAMADUL ISLAM</p>
+            <p><strong>ইমেইল:</strong> samadul2011@gmail.com</p>
+            <p><strong>WhatsApp:</strong> +968 9755 0832</p>
+            <p style="margin-top: 15px;">যেকোনো সমস্যা বা পরামর্শের জন্য সরাসরি যোগাযোগ করুন</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 নাহার অ্যাপস | 🇧🇩 বাংলাদেশের জন্য তৈরি</p>
+            <p>সমস্ত অ্যাপ সম্পূর্ণ ফ্রি | কোন লুকানো খরচ নেই</p>
+        </div>
+    </div>
+</body>
+</html>
