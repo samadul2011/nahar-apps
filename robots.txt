@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /downloads/
 Sitemap: https://samadul2011.github.io/nahar-apps/sitemap.xml
