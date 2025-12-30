@@ -236,30 +236,32 @@
 
         <!-- Statistics -->
         <section class="mt-12 grid gap-6 md:grid-cols-4" aria-label="ওয়েবসাইট পরিসংখ্যান">
-            <div class="glass rounded-2xl p-5 shadow"
+          <div class="glass rounded-2xl p-5 shadow"
                  itemscope
                  itemtype="https://schema.org/SoftwareApplication">
             
-              <meta itemprop="name" content="নাহার অ্যাপস কালেকশন" />
+              <!-- App name for schema -->
+              <meta itemprop="name" content="নাহার অ্যাপস কালেকশন">
             
-              <div itemprop="aggregateRating"
-                   itemscope
-                   itemtype="https://schema.org/AggregateRating">
+              <p class="text-sm text-slate-500">ব্যবহারকারী রেটিং</p>
             
-                <p class="text-sm text-slate-500">ব্যবহারকারী রেটিং</p>
+              <!-- Visible rating -->
+              <p class="text-3xl font-bold">
+                <span itemprop="aggregateRating"
+                      itemscope
+                      itemtype="https://schema.org/AggregateRating">
             
-                <p class="text-3xl font-bold">
                   <span itemprop="ratingValue">4.8</span>★
-                </p>
+                  <meta itemprop="bestRating" content="5">
+                  <meta itemprop="worstRating" content="1">
+                  <meta itemprop="ratingCount" content="128">
+                </span>
+              </p>
             
-                <p class="text-xs text-slate-500">
-                  <span itemprop="ratingCount">128</span> রিভিউ
-                </p>
-            
-                <meta itemprop="bestRating" content="5">
-                <meta itemprop="worstRating" content="1">
-              </div>
+              <!-- Visible review count (Bengali UI, NOT schema) -->
+              <p class="text-xs text-slate-500">১২৮ রিভিউ</p>
             </div>
+
         </section>
 
         <!-- Apps Section -->
