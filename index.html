@@ -4,216 +4,312 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>নাহার অ্যাপস - বাংলাদেশের জন্য ফ্রি অ্যাপস</title>
-    <meta name="description" content="বাংলাদেশের জন্য ফ্রি অ্যান্ড্রয়েড অ্যাপ্লিকেশন। শিশু গণিত, ব্যাকরণ সহায়ক, বাংলা ক্যালকুলেটর, BMI ক্যালকুলেটর ডাউনলোড করুন।">
+    <meta name="description" content="বাংলাদেশের জন্য ফ্রি অ্যান্ড্রয়েড অ্যাপ্লিকেশন। শিশু গণিত, ব্যাকরণ সহায়ক, বাংলা ক্যালকুলেটর, BMI ক্যালকুলেটর, POS সফটওয়্যারসহ ১২টি অ্যাপস ডাউনলোড করুন।">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 20px;
+        :root {
+            font-family: 'Noto Sans Bengali', 'Hind Siliguri', 'Segoe UI', sans-serif;
         }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
+        body {
+            background: linear-gradient(135deg, #edf2ff 0%, #fefefe 40%, #e0f7ff 100%);
         }
-        
-        .header {
-            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            padding: 30px;
-        }
-        
-        .app-card {
-            background: white;
-            border: 1px solid #e1e4e8;
-            border-radius: 10px;
-            padding: 25px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-        
-        .app-card h3 {
-            color: #1a2980;
-            margin-bottom: 15px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #26d0ce;
-            padding-bottom: 10px;
-        }
-        
-        .app-card p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .btn-download {
-            display: inline-block;
-            background: linear-gradient(90deg, #1a2980 0%, #26d0ce 100%);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-download:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(26, 41, 128, 0.3);
-        }
-        
-        .instructions {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px;
-            border-left: 5px solid #26d0ce;
-        }
-        
-        .instructions h4 {
-            color: #1a2980;
-            margin-bottom: 15px;
-        }
-        
-        .instructions ol {
-            padding-left: 20px;
-        }
-        
-        .instructions li {
-            margin-bottom: 10px;
-        }
-        
-        .contact-info {
-            background: #1a2980;
-            color: white;
-            padding: 25px;
-            text-align: center;
-            border-top: 5px solid #26d0ce;
-        }
-        
-        .contact-info h3 {
-            margin-bottom: 15px;
-        }
-        
-        .contact-info p {
-            margin: 5px 0;
-            opacity: 0.9;
-        }
-        
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        @media (max-width: 768px) {
-            .apps-grid {
-                grid-template-columns: 1fr;
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 2em;
-            }
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>🇧🇩 নাহার অ্যাপস</h1>
-            <p>বাংলাদেশের ব্যবহারকারীদের জন্য ফ্রি ও কার্যকরী অ্যান্ড্রয়েড অ্যাপ্লিকেশন</p>
-        </div>
-        
-        <div class="apps-grid">
-            <!-- App 1 -->
-            <div class="app-card">
-                <h3>শিশু গণিত (Shishu Gonit)</h3>
-                <p>বাংলাদেশি শিশুদের জন্য গণিত শেখার ইন্টারেক্টিভ অ্যাপ। সংখ্যা চেনা, যোগ-বিয়োগ, গুণ-ভাগ সহজ উপায়ে শিখুন।</p>
-                <a href="shishu-gonit-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~5MB | ভার্সন: 1.0</p>
+<body class="text-slate-800">
+    <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3 font-semibold text-lg text-slate-900">
+                <span class="text-3xl">📱</span>
+                <div>
+                    নাহার অ্যাপস
+                    <div class="text-xs text-slate-500">১২টি ফ্রি অ্যাপস</div>
+                </div>
             </div>
-            
-            <!-- App 2 -->
-            <div class="app-card">
-                <h3>ব্যাকরণ সহায়ক (Grammar Sahayok)</h3>
-                <p>বাংলা ভাষার ব্যাকরণ শেখার সম্পূর্ণ গাইড। বর্ণমালা, শব্দ গঠন, বাক্য গঠন সহ বাংলা ভাষায় দক্ষতা বৃদ্ধি করুন।</p>
-                <a href="grammar-sahayok-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~6MB | ভার্সন: 1.0</p>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+                <a href="#hero" class="hover:text-cyan-600">হোম</a>
+                <a href="#apps" class="hover:text-cyan-600">অ্যাপ তালিকা</a>
+                <a href="#features" class="hover:text-cyan-600">কেন বেছে নেবেন</a>
+                <a href="#guide" class="hover:text-cyan-600">নির্দেশিকা</a>
+                <a href="#contact" class="hover:text-cyan-600">যোগাযোগ</a>
+            </nav>
+            <a href="#apps" class="text-white bg-gradient-to-r from-indigo-600 to-cyan-500 px-4 py-2 rounded-full text-sm font-semibold shadow">ডাউনলোড তালিকা</a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-16">
+        <section id="hero" class="mt-10 glass rounded-3xl p-8 md:p-12 shadow-xl relative overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-48 h-48 bg-cyan-200 rounded-full blur-3xl opacity-40"></div>
+            <div class="absolute -bottom-16 -left-10 w-56 h-56 bg-indigo-200 rounded-full blur-[120px] opacity-60"></div>
+            <div class="relative">
+                <p class="text-sm uppercase tracking-[0.4em] text-cyan-600 font-semibold">বাংলাদেশের জন্য এক্সক্লুসিভ</p>
+                <h1 class="text-3xl md:text-5xl font-bold mt-4 text-slate-900">🇧🇩 ১২টি ফ্রি অ্যান্ড্রয়েড অ্যাপস</h1>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl">শিশু শিক্ষা, ক্যালকুলেটর, POS, স্বাস্থ্যসহ প্রয়োজনীয় সব ক্যাটাগরিতে তৈরি নাহার অ্যাপস এখন এক প্ল্যাটফর্মে। সম্পূর্ণ বাংলা ইন্টারফেস ও অফলাইন সমর্থনে দ্রুত কাজ করুন।</p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <span class="px-4 py-2 rounded-full bg-white shadow text-sm font-semibold">৪টি ক্যালকুলেটর</span>
+                    <span class="px-4 py-2 rounded-full bg-white shadow text-sm font-semibold">৩টি POS সমাধান</span>
+                    <span class="px-4 py-2 rounded-full bg-white shadow text-sm font-semibold">২টি শিক্ষামূলক</span>
+                    <span class="px-4 py-2 rounded-full bg-white shadow text-sm font-semibold">৩টি ইউটিলিটি</span>
+                </div>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#apps" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-cyan-200">১২টি অ্যাপস দেখুন</a>
+                    <button id="scrollToGuide" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-300 font-semibold text-slate-700 hover:border-cyan-400">ইন্সটলেশন শিখুন</button>
+                </div>
             </div>
-            
-            <!-- App 3 -->
-            <div class="app-card">
-                <h3>বাংলা ক্যালকুলেটর</h3>
-                <p>বাংলা ইন্টারফেস সহ উন্নত ক্যালকুলেটর। সাধারণ ও বৈজ্ঞানিক গণনা, বাংলা সংখ্যা প্রদর্শন, অফলাইন কার্যকারিতা।</p>
-                <a href="bengali-calculator-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~4MB | ভার্সন: 1.0</p>
+        </section>
+
+        <section class="mt-12 grid gap-6 md:grid-cols-4">
+            <div class="glass rounded-2xl p-5 shadow">
+                <p class="text-sm text-slate-500">মোট ডাউনলোড</p>
+                <p class="text-3xl font-bold" id="downloadCount">0</p>
+                <p class="text-xs text-slate-500">দিন দিন বাড়ছে</p>
             </div>
-            
-            <!-- App 4 -->
-            <div class="app-card">
-                <h3>BMI ক্যালকুলেটর</h3>
-                <p>স্বাস্থ্য পর্যবেক্ষণের জন্য Body Mass Index গণনাকারী। উচ্চতা-ওজন অনুপাত, স্বাস্থ্য পরামর্শ, ট্র্যাকিং সিস্টেম।</p>
-                <a href="bmi-calculator-v1.0.apk" class="btn-download">ডাউনলোড করুন (APK)</a>
-                <p style="margin-top: 10px; font-size: 0.9em; color: #777;">সাইজ: ~3MB | ভার্সন: 1.0</p>
+            <div class="glass rounded-2xl p-5 shadow">
+                <p class="text-sm text-slate-500">অফলাইন সমর্থন</p>
+                <p class="text-3xl font-bold">৯৫%</p>
+                <p class="text-xs text-slate-500">প্রায় সব অ্যাপস</p>
+            </div>
+            <div class="glass rounded-2xl p-5 shadow">
+                <p class="text-sm text-slate-500">শেষ আপডেট</p>
+                <p class="text-3xl font-bold">২০২৪</p>
+                <p class="text-xs text-slate-500">চলতি বছরের রিলিজ</p>
+            </div>
+            <div class="glass rounded-2xl p-5 shadow">
+                <p class="text-sm text-slate-500">ব্যবহারকারী রেটিং</p>
+                <p class="text-3xl font-bold">৪.৮★</p>
+                <p class="text-xs text-slate-500">গড় সন্তুষ্টি</p>
+            </div>
+        </section>
+
+        <section class="mt-16" id="apps">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                    <p class="text-sm text-cyan-600 font-semibold">অ্যাপ লাইব্রেরি</p>
+                    <h2 class="text-3xl font-bold text-slate-900">জনপ্রিয় অ্যাপ্লিকেশনসমূহ</h2>
+                    <p class="text-slate-600">সার্চ ও ক্যাটাগরি অনুযায়ী বাছাই করুন।</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <input id="searchInput" type="text" placeholder="অ্যাপ খুঁজুন" class="border border-slate-200 rounded-full px-4 py-2 focus:outline-none focus:border-cyan-500" />
+                    <select id="categoryFilter" class="border border-slate-200 rounded-full px-4 py-2 focus:outline-none focus:border-cyan-500">
+                        <option value="all">সকল ক্যাটাগরি</option>
+                        <option value="education">শিক্ষা</option>
+                        <option value="calculator">ক্যালকুলেটর</option>
+                        <option value="pos">POS</option>
+                        <option value="utility">ইউটিলিটি</option>
+                        <option value="health">স্বাস্থ্য</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="appsGrid" class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+        </section>
+
+        <section id="features" class="mt-20 glass rounded-3xl p-8 md:p-12 shadow">
+            <div class="text-center">
+                <p class="text-sm text-cyan-600 font-semibold">কেন নাহার অ্যাপস?</p>
+                <h2 class="text-3xl font-bold text-slate-900">বাংলাদেশি ব্যবহারকারীদের জন্য কাস্টমাইজড অভিজ্ঞতা</h2>
+            </div>
+            <div class="mt-10 grid gap-6 md:grid-cols-3">
+                <div class="p-6 rounded-2xl bg-white shadow">
+                    <h3 class="text-xl font-semibold">সম্পূর্ণ ফ্রি</h3>
+                    <p class="text-sm text-slate-600 mt-3">সব ১২টি অ্যাপ কোন সাবস্ক্রিপশন ছাড়াই ব্যবহার করতে পারবেন।</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white shadow">
+                    <h3 class="text-xl font-semibold">বাংলা ইন্টারফেস</h3>
+                    <p class="text-sm text-slate-600 mt-3">মেনু, নির্দেশনা ও রিপোর্ট সবকিছু বাংলায় ডিজাইন করা।</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white shadow">
+                    <h3 class="text-xl font-semibold">অফলাইন সাপোর্ট</h3>
+                    <p class="text-sm text-slate-600 mt-3">দুর্বল ইন্টারনেট এলাকায়ও স্বাচ্ছন্দ্যে ব্যবহারযোগ্য।</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="mt-20">
+            <div class="text-center">
+                <p class="text-sm text-cyan-600 font-semibold">ইন্সটলেশন নির্দেশিকা</p>
+                <h2 class="text-3xl font-bold">৪ ধাপে সহজ সেটআপ</h2>
+            </div>
+            <div class="mt-10 grid gap-6 md:grid-cols-4">
+                <div class="glass rounded-2xl p-6 text-center shadow">
+                    <div class="text-3xl font-black text-cyan-600">১</div>
+                    <h4 class="font-semibold mt-2">ডাউনলোড</h4>
+                    <p class="text-sm text-slate-600 mt-2">নির্বাচিত অ্যাপের ডাউনলোড বাটনে চাপুন।</p>
+                </div>
+                <div class="glass rounded-2xl p-6 text-center shadow">
+                    <div class="text-3xl font-black text-cyan-600">২</div>
+                    <h4 class="font-semibold mt-2">অনুমতি দিন</h4>
+                    <p class="text-sm text-slate-600 mt-2">Settings → Security-তে Unknown Sources অন করুন।</p>
+                </div>
+                <div class="glass rounded-2xl p-6 text-center shadow">
+                    <div class="text-3xl font-black text-cyan-600">৩</div>
+                    <h4 class="font-semibold mt-2">ইন্সটল</h4>
+                    <p class="text-sm text-slate-600 mt-2">ডাউনলোড ফাইল খুলে Install নির্বাচন করুন।</p>
+                </div>
+                <div class="glass rounded-2xl p-6 text-center shadow">
+                    <div class="text-3xl font-black text-cyan-600">৪</div>
+                    <h4 class="font-semibold mt-2">ব্যবহার করুন</h4>
+                    <p class="text-sm text-slate-600 mt-2">অ্যাপ চালু করে প্রাথমিক সেটিং সম্পন্ন করুন।</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-20 grid gap-8 md:grid-cols-2">
+            <div class="glass rounded-3xl p-8 shadow" id="contact">
+                <p class="text-sm text-cyan-600 font-semibold">যোগাযোগ</p>
+                <h2 class="text-3xl font-bold text-slate-900">ডেভেলপারের সাথে কথা বলুন</h2>
+                <p class="text-slate-600 mt-4">যেকোনো বাগ রিপোর্ট, আপডেট রিকোয়েস্ট বা কাস্টম অ্যাপের জন্য যোগাযোগ করুন।</p>
+                <div class="mt-6 space-y-4 text-sm">
+                    <div><span class="font-semibold">ডেভেলপার:</span> MD SAMADUL HOQUE</div>
+                    <div><span class="font-semibold">ইমেইল:</span> samadul2011@gmail.com</div>
+                    <div><span class="font-semibold">WhatsApp:</span> +968 9755 0832</div>
+                    <div><span class="font-semibold">অবস্থান:</span> বাংলাদেশ</div>
+                </div>
+                <button id="copyEmail" class="mt-6 inline-flex items-center gap-2 px-5 py-3 rounded-full border border-slate-300 text-sm font-semibold hover:border-cyan-500">ইমেইল কপি করুন</button>
+                <p id="copyMessage" class="text-xs text-green-600 mt-2 hidden">ইমেইল ঠিকানা কপি হয়েছে!</p>
+            </div>
+            <div class="glass rounded-3xl p-8 shadow">
+                <p class="text-sm text-cyan-600 font-semibold">সাধারণ প্রশ্ন</p>
+                <h2 class="text-3xl font-bold">FAQ</h2>
+                <div class="mt-6 divide-y divide-slate-200" id="faq"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-200 mt-16">
+        <div class="max-w-6xl mx-auto px-4 py-10 grid gap-10 md:grid-cols-3">
+            <div>
+                <h3 class="text-xl font-semibold">নাহার অ্যাপস</h3>
+                <p class="text-sm mt-3 text-slate-400">বাংলাদেশের ব্যবহারকারীদের জন্য ১২টি প্রয়োজনীয় অ্যান্ড্রয়েড অ্যাপস সাজানো লাইটওয়েট প্ল্যাটফর্ম।</p>
+            </div>
+            <div>
+                <h4 class="font-semibold">দ্রুত লিংক</h4>
+                <ul class="text-sm mt-3 space-y-1 text-slate-400">
+                    <li><a href="#hero" class="hover:text-white">হোম</a></li>
+                    <li><a href="#apps" class="hover:text-white">সকল অ্যাপস</a></li>
+                    <li><a href="#features" class="hover:text-white">কেন বেছে নেবেন</a></li>
+                    <li><a href="#guide" class="hover:text-white">ইন্সটলেশন</a></li>
+                    <li><a href="#contact" class="hover:text-white">যোগাযোগ</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold">স্ট্যাটাস</h4>
+                <p class="text-sm mt-3 text-slate-400">মোট অ্যাপস: ১২টি</p>
+                <p class="text-sm text-slate-400">শেষ আপডেট: ২০২৪</p>
+                <p class="text-sm text-slate-400">সকল অ্যাপ সম্পূর্ণ ফ্রি</p>
             </div>
         </div>
-        
-        <div class="instructions">
-            <h4>📱 ইন্সটলেশন নির্দেশিকা:</h4>
-            <ol>
-                <li>উপরে ডাউনলোড বাটনে ক্লিক করুন</li>
-                <li>APK ফাইলটি আপনার ডিভাইসে ডাউনলোড হবে</li>
-                <li>ডাউনলোড সম্পূর্ণ হলে ফাইলটিতে ট্যাপ করুন</li>
-                <li>"অজানা সোর্স" অনুমতি দিন (প্রথমবারের জন্য)</li>
-                <li>ইন্সটলেশন সম্পন্ন করুন এবং অ্যাপ খুলুন</li>
-            </ol>
+        <div class="border-t border-slate-700 text-center text-xs py-4 text-slate-400">
+            © <span id="year"></span> নাহার অ্যাপস | সকল স্বত্ব সংরক্ষিত
         </div>
-        
-        <div class="contact-info">
-            <h3>📞 যোগাযোগ করুন</h3>
-            <p><strong>ডেভেলপার:</strong> MD SAMADUL ISLAM</p>
-            <p><strong>ইমেইল:</strong> samadul2011@gmail.com</p>
-            <p><strong>WhatsApp:</strong> +968 9755 0832</p>
-            <p style="margin-top: 15px;">যেকোনো সমস্যা বা পরামর্শের জন্য সরাসরি যোগাযোগ করুন</p>
-        </div>
-        
-        <div class="footer">
-            <p>© 2024 নাহার অ্যাপস | 🇧🇩 বাংলাদেশের জন্য তৈরি</p>
-            <p>সমস্ত অ্যাপ সম্পূর্ণ ফ্রি | কোন লুকানো খরচ নেই</p>
-        </div>
-    </div>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-6 right-6 hidden bg-slate-900 text-white px-4 py-3 rounded-full shadow-lg">↑ উপরে যান</button>
+
+    <script>
+        const apps = [
+            { name: 'শিশু গণিত', slug: 'shishu-gonit-v1.0.apk', size: '5MB', version: '1.0', description: 'শিশুদের জন্য ইন্টারেক্টিভ গণিত শিক্ষা।', category: 'education' },
+            { name: 'ব্যাকরণ সহায়ক', slug: 'grammar-sahayok-v1.0.apk', size: '6MB', version: '1.0', description: 'বাংলা ব্যাকরণ শেখার গাইড।', category: 'education' },
+            { name: 'বাংলা ক্যালকুলেটর', slug: 'bengali-calculator-v1.0.apk', size: '4MB', version: '1.0', description: 'বাংলা ইন্টারফেসসহ উন্নত ক্যালকুলেটর।', category: 'calculator' },
+            { name: 'BMI ক্যালকুলেটর', slug: 'bmi-calculator-v1.0.apk', size: '3MB', version: '1.0', description: 'স্বাস্থ্য পর্যবেক্ষণের জন্য BMI গনক।', category: 'health' },
+            { name: 'সিম্পল POS বাংলাদেশ', slug: 'simple-pos-bd.apk', size: '7MB', version: '1.0', description: 'ছোট দোকানের জন্য POS সিস্টেম।', category: 'pos' },
+            { name: 'রিটেইল POS প্রো', slug: 'retail-pos-pro.apk', size: '9MB', version: '2.0', description: 'ইনভেন্টরি ও রিপোর্টিংসহ উন্নত POS।', category: 'pos' },
+            { name: 'ফার্মেসি POS', slug: 'pharma-pos.apk', size: '8MB', version: '1.3', description: 'ফার্মেসির জন্য কাস্টম POS টুল।', category: 'pos' },
+            { name: 'বাংলা ডেট কনভার্টার', slug: 'bangla-date.apk', size: '2MB', version: '1.1', description: 'ইংরেজি- বাংলা তারিখ রূপান্তর।', category: 'utility' },
+            { name: 'ইউনিট কনভার্টার BD', slug: 'unit-converter.apk', size: '3MB', version: '1.0', description: 'মাপজোক ইউনিট বদলানোর টুল।', category: 'utility' },
+            { name: 'ভ্যাট ক্যালকুলেটর', slug: 'vat-calculator.apk', size: '2MB', version: '1.2', description: 'ব্যবসায়ের জন্য ভ্যাট গণনা।', category: 'calculator' },
+            { name: 'বাংলা ক্যালেন্ডার', slug: 'bangla-calendar.apk', size: '4MB', version: '1.5', description: 'বাংলা পঞ্জিকা ও রিমাইন্ডার।', category: 'utility' },
+            { name: 'রক্তচাপ ট্র্যাকার', slug: 'bp-tracker.apk', size: '3MB', version: '1.0', description: 'দৈনিক BP রেকর্ড ও বিশ্লেষণ।', category: 'health' }
+        ];
+
+        const faqData = [
+            { q: 'অ্যাপগুলো কি নিরাপদ?', a: 'হ্যাঁ, প্রতিটি APK ম্যালওয়্যার স্ক্যানের পর প্রকাশ করা হয়।' },
+            { q: 'অ্যাপ আপডেট কিভাবে পাব?', a: 'নতুন ভার্সন এখানে আপলোড হওয়ার সাথে সাথে ডাউনলোড বাটনের পাশে আপডেট ট্যাগ দেখাবে।' },
+            { q: 'ডেটা কি ক্লাউডে যায়?', a: 'ব্যবহারকারীর ডেটা ডিভাইসেই থাকে, অনুমতি ছাড়া ক্লাউডে পাঠানো হয় না।' }
+        ];
+
+        const appsGrid = document.getElementById('appsGrid');
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const downloadCount = document.getElementById('downloadCount');
+        const backToTop = document.getElementById('backToTop');
+        const scrollToGuide = document.getElementById('scrollToGuide');
+
+        function renderApps() {
+            const term = searchInput.value.toLowerCase();
+            const category = categoryFilter.value;
+            const filtered = apps.filter(app => {
+                const matchesTerm = app.name.toLowerCase().includes(term) || app.description.toLowerCase().includes(term);
+                const matchesCategory = category === 'all' || app.category === category;
+                return matchesTerm && matchesCategory;
+            });
+
+            appsGrid.innerHTML = filtered.map(app => `
+                <div class="glass rounded-3xl p-6 shadow flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs uppercase tracking-[0.4em] text-cyan-500">${app.category}</div>
+                        <h3 class="text-2xl font-semibold text-slate-900 mt-2">${app.name}</h3>
+                        <p class="text-sm text-slate-600 mt-3">${app.description}</p>
+                    </div>
+                    <div class="mt-6 flex items-center justify-between text-xs text-slate-500">
+                        <span>সাইজ: ${app.size}</span>
+                        <span>ভার্সন: ${app.version}</span>
+                    </div>
+                    <a href="downloads/${app.slug}" class="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold px-4 py-2 rounded-full">ডাউনলোড করুন</a>
+                </div>
+            `).join('');
+        }
+
+        function animateDownloads(target = 128000) {
+            let start = 0;
+            const step = () => {
+                start += Math.ceil(target / 80);
+                if (start > target) start = target;
+                downloadCount.textContent = start.toLocaleString('bn-BD');
+                if (start < target) requestAnimationFrame(step);
+            };
+            step();
+        }
+
+        function renderFAQ() {
+            const faqContainer = document.getElementById('faq');
+            faqContainer.innerHTML = faqData.map((item, index) => `
+                <details class="py-4" ${index === 0 ? 'open' : ''}>
+                    <summary class="font-semibold text-slate-800 cursor-pointer">${item.q}</summary>
+                    <p class="text-sm text-slate-600 mt-2">${item.a}</p>
+                </details>
+            `).join('');
+        }
+
+        searchInput.addEventListener('input', renderApps);
+        categoryFilter.addEventListener('change', renderApps);
+        scrollToGuide.addEventListener('click', () => document.querySelector('#guide').scrollIntoView({ behavior: 'smooth' }));
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        document.getElementById('copyEmail').addEventListener('click', () => {
+            navigator.clipboard.writeText('samadul2011@gmail.com').then(() => {
+                document.getElementById('copyMessage').classList.remove('hidden');
+                setTimeout(() => document.getElementById('copyMessage').classList.add('hidden'), 2000);
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        renderApps();
+        renderFAQ();
+        animateDownloads();
+    </script>
 </body>
 </html>
