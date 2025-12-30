@@ -70,9 +70,14 @@
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "bestRating": "5",
-      "ratingCount": "128"
+      "itemReviewed": {
+        "@type": "SoftwareApplication",
+        "name": "নাহার অ্যাপস কালেকশন"
+      },
+      "ratingValue": 4.8,
+      "bestRating": 5,
+      "worstRating": 1,
+      "ratingCount": 128
     },
     "author": {
       "@type": "Person",
@@ -259,8 +264,8 @@
             </div>
             <div class="glass rounded-2xl p-5 shadow">
                 <p class="text-sm text-slate-500">ব্যবহারকারী রেটিং</p>
-                <p class="text-3xl font-bold">৪.৮★</p>
-                <p class="text-xs text-slate-500">১২৮ রিভিউ</p>
+                <p class="text-3xl font-bold"><span itemprop="ratingValue">4.8</span>★</p>
+                <p class="text-xs text-slate-500"><span itemprop="ratingCount">128</span> রিভিউ</p>
             </div>
         </section>
 
@@ -295,28 +300,6 @@
             <h2 id="content-title" class="text-3xl font-bold text-slate-900 mb-8 text-center">বাংলাদেশি ব্যবহারকারীদের জন্য বিশেষ গাইড</h2>
             
             <div class="space-y-8">
-                <article itemscope itemtype="https://schema.org/Article">
-                    <h3 class="text-2xl font-semibold text-slate-800 mb-4" itemprop="headline">বাংলাদেশে অ্যান্ড্রয়েড অ্যাপস ব্যবহারের সুবিধা</h3>
-                    <div class="text-slate-600 space-y-4" itemprop="articleBody">
-                        <p>বাংলাদেশে স্মার্টফোন ব্যবহারকারীর সংখ্যা দিন দিন বাড়ছে। তবে অনেক ব্যবহারকারী ইংরেজি ভাষায় স্বাচ্ছন্দ্য বোধ করেন না। বাংলা ভাষায় অ্যান্ড্রয়েড অ্যাপ ব্যবহার করলে ব্যবহারকারীরা সহজেই মেনু, অপশন এবং নির্দেশনা বুঝতে পারেন। নাহার অ্যাপসের সবগুলো অ্যাপ বিশেষভাবে <strong>বাংলাদেশের ব্যবহারকারীদের চাহিদা</strong> অনুযায়ী তৈরি করা হয়েছে।</p>
-                        
-                        <p><strong>বাংলাদেশি কন্টেক্সটে ডিজাইন:</strong> আমাদের POS অ্যাপগুলোতে বাংলাদেশি মুদ্রা (টাকা), ভ্যাট ক্যালকুলেশন, এবং স্থানীয় বিক্রয় রিপোর্ট সিস্টেম অন্তর্ভুক্ত। গণিত অ্যাপগুলোতে বাংলা সংখ্যা এবং স্থানীয় উদাহরণ ব্যবহার করা হয়েছে।</p>
-                        
-                        <p><strong>নেটওয়ার্ক অপটিমাইজেশন:</strong> বাংলাদেশের ইন্টারনেট স্পিড ও স্ট্যাবিলিটি বিবেচনা করে অ্যাপগুলো হালকা ও দ্রুত লোড হওয়ার জন্য অপটিমাইজ করা হয়েছে।</p>
-                    </div>
-                </article>
-                
-                <article itemscope itemtype="https://schema.org/Article">
-                    <h3 class="text-2xl font-semibold text-slate-800 mb-4" itemprop="headline">অফলাইন অ্যাপসের গুরুত্ব বাংলাদেশে</h3>
-                    <div class="text-slate-600 space-y-4" itemprop="articleBody">
-                        <p>বাংলাদেশের অনেক এলাকায়, বিশেষ করে গ্রামীণ অঞ্চলে, ইন্টারনেট সংযোগ দুর্বল বা অনিয়মিত। আমাদের ১২টি অ্যাপের মধ্যে ১১টি <strong>সম্পূর্ণ অফলাইন</strong> কাজ করে, যা বাংলাদেশের প্রতিটি অঞ্চলের ব্যবহারকারীদের জন্য বিশেষভাবে উপযোগী।</p>
-                        
-                        <p><strong>ডাটা খরচ সাশ্রয়:</strong> বাংলাদেশে মোবাইল ডাটার দাম তুলনামূলকভাবে বেশি। অফলাইন অ্যাপস ব্যবহার করে ব্যবহারকারীরা মাসিক ডাটা খরচ সাশ্রয় করতে পারেন।</p>
-                        
-                        <p><strong>দ্রুত এক্সেস:</strong> ইন্টারনেট সংযোগের অপেক্ষা না করে দ্রুততার সাথে অ্যাপস ব্যবহার করা যায়, যা ব্যবসায়িক কাজে বিশেষভাবে গুরুত্বপূর্ণ।</p>
-                    </div>
-                </article>
-                
                 <article itemscope itemtype="https://schema.org/Article">
                     <h3 class="text-2xl font-semibold text-slate-800 mb-4" itemprop="headline">বাংলাদেশে ব্যবসায়িক অ্যাপসের চাহিদা</h3>
                     <div class="text-slate-600 space-y-4" itemprop="articleBody">
@@ -463,7 +446,7 @@
                 category: 'education' 
             },
             { 
-                name: 'ব্যাকরণ সহায়ক', 
+                name: 'ব্যাকরণ সহায়ক', 
                 slug: 'grammar-sahayok-v1.0.apk', 
                 size: '6MB', 
                 version: '1.0', 
@@ -666,35 +649,51 @@
         backToTop.addEventListener('click', () => {
             window.scrollTo({ 
                 top: 0, 
-                behavior: 'smooth' 
-            });
+                behavior: 'smooth' 4" itemprop="headline">বাংলাদেশে অ্যান্ড্রয়েড অ্যাপস ব্যবহারের সুবিধা</h3>
+                    <div class="text-slate-600 space-y-4" itemprop="articleBody">
+                        <p>বাংলাদেশে স্মার্টফোন ব্যবহারকারীর সংখ্যা দিন দিন বাড়ছে। তবে অনেক ব্যবহারকারী ইংরেজি ভাষায় স্বাচ্ছন্দ্য বোধ করেন না। বাংলা ভাষায় অ্যান্ড্রয়েড অ্যাপ ব্যবহার করলে ব্যবহারকারীরা সহজেই মেনু, অপশন এবং নির্দেশনা বুঝতে পারেন। নাহার অ্যাপসের সবগুলো অ্যাপ বিশেষভাবে <strong>বাংলাদেশের ব্যবহারকারীদের চাহিদা</strong> অনুযায়ী তৈরি করা হয়েছে।</p>
+                        
+                        <p><strong>বাংলাদেশি কন্টেক্সটে ডিজাইন:</strong> আমাদের POS অ্যাপগুলোতে বাংলাদেশি মুদ্রা (টাকা), ভ্যাট ক্যালকুলেশন, এবং স্থানীয় বিক্রয় রিপোর্ট সিস্টেম অন্তর্ভুক্ত। গণিত অ্যাপগুলোতে বাংলা সংখ্যা এবং স্থানীয় উদাহরণ ব্যবহার করা হয়েছে।</p>
+                        
+                        <p><strong>নেটওয়ার্ক অপটিমাইজেশন:</strong> বাংলাদেশের ইন্টারনেট স্পিড ও স্ট্যাবিলিটি বিবেচনা করে অ্যাপগুলো হালকা ও দ্রুত লোড হওয়ার জন্য অপটিমাইজ করা হয়েছে।</p>
+                    </div>
+                </article>
+                
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h3 class="text-2xl font-semibold text-slate-800 mb-4" itemprop="headline">অফলাইন অ্যাপসের গুরুত্ব বাংলাদেশে</h3>
+                    <div class="text-slate-600 space-y-4" itemprop="articleBody">
+                        <p>বাংলাদেশের অনেক এলাকায়, বিশেষ করে গ্রামীণ অঞ্চলে, ইন্টারনেট সংযোগ দুর্বল বা অনিয়মিত। আমাদের ১২টি অ্যাপের মধ্যে ১১টি <strong>সম্পূর্ণ অফলাইন</strong> কাজ করে, যা বাংলাদেশের প্রতিটি অঞ্চলের ব্যবহারকারীদের জন্য বিশেষভাবে উপযোগী।</p>
+                        
+                        <p><strong>ডাটা খরচ সাশ্রয়:</strong> বাংলাদেশে মোবাইল ডাটার দাম তুলনামূলকভাবে বেশি। অফলাইন অ্যাপস ব্যবহার করে ব্যবহারকারীরা মাসিক ডাটা খরচ সাশ্রয় করতে পারেন।</p>
+                        
+                        <p><strong>দ্রুত এক্সেস:</strong> ইন্টারনেট সংযোগের অপেক্ষা না করে দ্রুততার সাথে অ্যাপস ব্যবহার করা যায়, যা ব্যবসায়িক কাজে বিশেষভাবে গুরুত্বপূর্ণ।</p>
+                    </div>
+                </article>
+                
+                <article itemscope itemtype="https://schema.org/Article">
+                    <h3 class="text-2xl font-semibold text-slate-800 mb-// Copy email functionality
+    document.getElementById('copyEmail').addEventListener('click', () => {
+        navigator.clipboard.writeText('samadul2011@gmail.com').then(() => {
+            const msg = document.getElementById('copyMessage');
+            msg.classList.remove('hidden');
+            setTimeout(() => msg.classList.add('hidden'), 2000);
         });
+    });
 
-        // Copy email functionality
-        document.getElementById('copyEmail').addEventListener('click', () => {
-            navigator.clipboard.writeText('samadul2011@gmail.com').then(() => {
-                const msg = document.getElementById('copyMessage');
-                msg.classList.remove('hidden');
-                setTimeout(() => msg.classList.add('hidden'), 2000);
-            });
-        });
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+    // Initialize
+    renderApps();
+    renderFAQ();
+    animateDownloads();
 
-        // Initialize
-        renderApps();
-        renderFAQ();
-        animateDownloads();
-
-        // Focus management for accessibility
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                if (document.activeElement === searchInput) {
-                    searchInput.blur();
-                }
+    // Focus management for accessibility
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (document.activeElement === searchInput) {
+                searchInput.blur();
             }
-        });
-    </script>
-</body>
-</html>
+        }
+    });
+</script>
