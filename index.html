@@ -236,25 +236,29 @@
 
         <!-- Statistics -->
         <section class="mt-12 grid gap-6 md:grid-cols-4" aria-label="ওয়েবসাইট পরিসংখ্যান">
-            <div class="glass rounded-2xl p-5 shadow" itemscope itemtype="https://schema.org/InteractionCounter">
-                <p class="text-sm text-slate-500">মোট ডাউনলোড</p>
-                <p class="text-3xl font-bold" id="downloadCount" itemprop="userInteractionCount">0</p>
-                <p class="text-xs text-slate-500">দিন দিন বাড়ছে</p>
-            </div>
-            <div class="glass rounded-2xl p-5 shadow">
-                <p class="text-sm text-slate-500">অফলাইন সমর্থন</p>
-                <p class="text-3xl font-bold">৯৫%</p>
-                <p class="text-xs text-slate-500">প্রায় সব অ্যাপস</p>
-            </div>
-            <div class="glass rounded-2xl p-5 shadow">
-                <p class="text-sm text-slate-500">শেষ আপডেট</p>
-                <p class="text-3xl font-bold">২০২৫</p>
-                <p class="text-xs text-slate-500">চলতি বছরের রিলিজ</p>
-            </div>
-            <div class="glass rounded-2xl p-5 shadow">
+            <div class="glass rounded-2xl p-5 shadow"
+                 itemscope
+                 itemtype="https://schema.org/SoftwareApplication">
+            
+              <meta itemprop="name" content="নাহার অ্যাপস কালেকশন" />
+            
+              <div itemprop="aggregateRating"
+                   itemscope
+                   itemtype="https://schema.org/AggregateRating">
+            
                 <p class="text-sm text-slate-500">ব্যবহারকারী রেটিং</p>
-                <p class="text-3xl font-bold">৪.৮★</p>
-                <p class="text-xs text-slate-500">১২৮ রিভিউ</p>
+            
+                <p class="text-3xl font-bold">
+                  <span itemprop="ratingValue">4.8</span>★
+                </p>
+            
+                <p class="text-xs text-slate-500">
+                  <span itemprop="ratingCount">128</span> রিভিউ
+                </p>
+            
+                <meta itemprop="bestRating" content="5">
+                <meta itemprop="worstRating" content="1">
+              </div>
             </div>
         </section>
 
