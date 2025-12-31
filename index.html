@@ -561,7 +561,16 @@
         const downloadCount = document.getElementById('downloadCount');
         const backToTop = document.getElementById('backToTop');
         const scrollToGuide = document.getElementById('scrollToGuide');
-
+        function getCategorySchema(category) {
+            const map = {
+                'education': 'EducationalApplication',
+                'calculator': 'UtilityApplication',
+                'pos': 'BusinessApplication',
+                'utility': 'UtilityApplication',
+                'health': 'MedicalApplication'
+            };
+            return map[category] || 'UtilityApplication';
+        }
         // Render Apps
         function renderApps() {
             const term = searchInput.value.toLowerCase();
@@ -573,18 +582,22 @@
                 return matchesTerm && matchesCategory;
             });
 
-            appsGrid.innerHTML = filtered.map(app => `
+           appsGrid.innerHTML = filtered.map(app => `
                 <div class="glass rounded-3xl p-6 shadow flex flex-col justify-between" role="listitem" itemscope itemtype="https://schema.org/SoftwareApplication">
                     <div>
                         <div class="text-xs uppercase tracking-[0.4em] text-cyan-500">${app.category}</div>
                         <h3 class="text-2xl font-semibold text-slate-900 mt-2" itemprop="name">${app.name}</h3>
                         <p class="text-sm text-slate-600 mt-3" itemprop="description">${app.description}</p>
+                        
+                        <!-- যোগ করা নতুন প্রপার্টি -->
+                        <meta itemprop="operatingSystem" content="Android" />
+                        <meta itemprop="applicationCategory" content="${getCategorySchema(app.category)}" />
                     </div>
                     <div class="mt-6 flex items-center justify-between text-xs text-slate-500">
                         <span itemprop="storageRequirements">সাইজ: ${app.size}</span>
                         <span itemprop="softwareVersion">ভার্সন: ${app.version}</span>
                     </div>
-                    <a href="downloads/${app.slug}" 
+                    <a href="downloads/${app.slug}"
                        class="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold px-4 py-2 rounded-full hover:shadow-lg transition-shadow"
                        itemprop="downloadUrl"
                        aria-label="${app.name} ডাউনলোড করুন">
