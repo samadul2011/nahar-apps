@@ -425,7 +425,12 @@
             <a href="privacy.html" class="hover:text-white">প্রাইভেসি পলিসি</a>
         </div>
     </footer>
-
+    <div class="w-full h-64 bg-slate-100 rounded-2xl overflow-hidden shadow-inner mb-6 flex items-center justify-center">
+        <img src="${app.icon}" 
+             alt="${app.name} অ্যাপের ছবি" 
+             class="max-w-full max-h-full object-contain"
+             loading="lazy" />
+    </div>
     <button id="backToTop" class="fixed bottom-6 right-6 hidden bg-slate-900 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow z-40 no-print" aria-label="পৃষ্ঠার শীর্ষে যান">
         ↑ উপরে যান
     </button>
@@ -433,104 +438,115 @@
     <script>
         // Apps Data
         const apps = [
-            { 
-                name: 'শিশু গণিত', 
-                slug: 'shishu-gonit-v1.0.apk', 
-                size: '5MB', 
-                version: '1.0', 
-                description: 'শিশুদের জন্য ইন্টারেক্টিভ গণিত শিক্ষা অ্যাপ। বাংলা সংখ্যা, যোগ-বিয়োগ, গুণ-ভাগ শেখার সুযোগ।', 
-                category: 'education',
-                icon: 'assets/og-image.png'
-            },
-            { 
-                name: 'ব্যাকরণ সহায়ক', 
-                slug: 'grammar-sahayok-v1.0.apk', 
-                size: '6MB', 
-                version: '1.0', 
-                description: 'বাংলা ব্যাকরণ শেখার সম্পূর্ণ গাইড। বর্ণমালা থেকে বাক্য গঠন পর্যন্ত সহজ ব্যাখ্যা।', 
-                category: 'education' 
-            },
-            { 
-                name: 'বাংলা ক্যালকুলেটর', 
-                slug: 'bengali-calculator-v1.0.apk', 
-                size: '4MB', 
-                version: '1.0', 
-                description: 'বাংলা ইন্টারফেসসহ উন্নত বৈজ্ঞানিক ক্যালকুলেটর। সাধারণ ও জটিল গণনার জন্য উপযোগী।', 
-                category: 'calculator' 
-            },
-            { 
-                name: 'BMI ক্যালকুলেটর', 
-                slug: 'bmi-calculator-v1.0.apk', 
-                size: '3MB', 
-                version: '1.0', 
-                description: 'স্বাস্থ্য পর্যবেক্ষণের জন্য BMI গণনাকারী। উচ্চতা-ওজন অনুপাত ও স্বাস্থ্য পরামর্শ।', 
-                category: 'health' 
-            },
-            { 
-                name: 'সিম্পল POS বাংলাদেশ', 
-                slug: 'simple_pos_bd.apk', 
-                size: '7MB', 
-                version: '1.0', 
-                description: 'বাংলাদেশি ছোট দোকানদারদের জন্য সহজ POS সিস্টেম। বাংলা ইন্টারফেস ও স্থানীয় মুদ্রা সমর্থন।', 
-                category: 'pos' 
-            },
-            { 
-                name: 'রিটেইল POS প্রো', 
-                slug: 'pos_eng.apk', 
-                size: '9MB', 
-                version: '2.0', 
-                description: 'ইনভেন্টরি ম্যানেজমেন্ট, সেলস রিপোর্টিং ও কাস্টমার ম্যানেজমেন্টসহ উন্নত POS সলিউশন।', 
-                category: 'pos' 
-            },
-            { 
-                name: 'বয়স ক্যালকুলেটর', 
-                slug: 'age_calculator.apk', 
-                size: '3MB', 
-                version: '1.1', 
-                description: 'জন্ম তারিখ থেকে সঠিক বয়স গণনা। বছর, মাস, দিন - সবকিছুর সঠিক হিসাব।', 
-                category: 'calculator' 
-            },
-            { 
-                name: 'বাংলা ঘড়ি', 
-                slug: 'Bengali_Clock.apk', 
-                size: '4MB', 
-                version: '1.2', 
-                description: 'বাংলা তারিখ ও সময় দেখার অ্যাপ। বাংলা মাস, দিন, সাল সহ সম্পূর্ণ বাংলা ক্যালেন্ডার।', 
-                category: 'utility' 
-            },
-            { 
-                name: 'কনভার্ট ক্যালকুলেটর', 
-                slug: 'convert_calculator.apk', 
-                size: '5MB', 
-                version: '1.0', 
-                description: 'মুদ্রা, দৈর্ঘ্য, ওজন, তাপমাত্রা রূপান্তর। ডলার-টাকা, কিলো-পাউন্ড সহজে রূপান্তর করুন।', 
-                category: 'calculator' 
-            },
-            { 
-                name: 'খরচের খাতা', 
-                slug: 'khorocher_khata.apk', 
-                size: '5MB', 
-                version: '1.0', 
-                description: 'নিত্যদিনের আয়-ব্যয়ের হিসাব রাখার অ্যাপ। মাসিক বাজেট, সঞ্চয়, খরচ ট্র্যাকিং।', 
-                category: 'utility' 
-            },
-            { 
-                name: 'প্রেসক্রিপশন', 
-                slug: 'prescription.apk', 
-                size: '4MB', 
-                version: '1.0', 
-                description: 'ডাক্তারদের জন্য প্রেসক্রিপশন লেখার অ্যাপ। রোগীর তথ্য, ঔষধের তালিকা, নির্দেশাবলী সহজে লিখুন।', 
-                category: 'health' 
-            },
-            { 
-                name: 'কম্পাস কাবা', 
-                slug: 'Compass_kaba.apk', 
-                size: '6MB', 
-                version: '1.0', 
-                description: 'সঠিক কিবলা দিক নির্দেশনা। নামাজের সময়, কিবলা দিক, মসজিদের অবস্থান - মুসলিম ব্যবহারকারীদের জন্য বিশেষ অ্যাপ।', 
-                category: 'utility' 
-            }
-        ];
+    {
+        name: 'শিশু গণিত',
+        slug: 'shishu-gonit-v1.0.apk',
+        size: '5MB',
+        version: '1.0',
+        description: 'শিশুদের জন্য ইন্টারেক্টিভ গণিত শিক্ষা অ্যাপ। বাংলা সংখ্যা, যোগ-বিয়োগ, গুণ-ভাগ শেখার সুযোগ।',
+        category: 'education',
+        icon: 'https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/fb9defbe-a77b-4c57-8e5f-7a7279bdbe71/708450898/bengali-maths-kids-screenshot'  // শিশু গণিতের মতো
+    },
+    {
+        name: 'ব্যাকরণ সহায়ক',
+        slug: 'grammar-sahayok-v1.0.apk',
+        size: '6MB',
+        version: '1.0',
+        description: 'বাংলা ব্যাকরণ শেখার সম্পূর্ণ গাইড। বর্ণমালা থেকে বাক্য গঠন পর্যন্ত সহজ ব্যাখ্যা।',
+        category: 'education',
+        icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c9/13/2f/c9132fb6-1216-9601-9b26-4d24c4becc3d/AppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/1200x630wa.png'  // বাংলা গ্রামার অ্যাপ
+    },
+    {
+        name: 'বাংলা ক্যালকুলেটর',
+        slug: 'bengali-calculator-v1.0.apk',
+        size: '4MB',
+        version: '1.0',
+        description: 'বাংলা ইন্টারফেসসহ উন্নত বৈজ্ঞানিক ক্যালকুলেটর। সাধারণ ও জটিল গণনার জন্য উপযোগী।',
+        category: 'calculator',
+        icon: 'https://play-lh.googleusercontent.com/OxIoBbY_AmF6AtvEwfrGnmOpbRzKhwMZB2HvqkOXxXtxqRpsLS80LvaOlwsnM5nWueA=w526-h296-rw'  // বাংলা ক্যালকুলেটর/ক্যালেন্ডার
+    },
+    {
+        name: 'BMI ক্যালকুলেটর',
+        slug: 'bmi-calculator-v1.0.apk',
+        size: '3MB',
+        version: '1.0',
+        description: 'স্বাস্থ্য পর্যবেক্ষণের জন্য BMI গণনাকারী। উচ্চতা-ওজন অনুপাত ও স্বাস্থ্য পরামর্শ।',
+        category: 'health',
+        icon: 'https://play-lh.googleusercontent.com/-Hshfxi-XZwbSfi67kt0MYcBWBSZmi2IWtFVTK4M2kY9PasFNRYq_9sO979227iWCpQ=w526-h296-rw'  // BMI ক্যালকুলেটর
+    },
+    {
+        name: 'সিম্পল POS বাংলাদেশ',
+        slug: 'simple_pos_bd.apk',
+        size: '7MB',
+        version: '1.0',
+        description: 'বাংলাদেশি ছোট দোকানদারদের জন্য সহজ POS সিস্টেম। বাংলা ইন্টারফেস ও স্থানীয় মুদ্রা সমর্থন।',
+        category: 'pos',
+        icon: 'https://financfy.com/wp-content/uploads/2025/05/POS-Software-in-Bangladesh.jpg'  // বাংলাদেশি POS
+    },
+    {
+        name: 'রিটেইল POS প্রো',
+        slug: 'pos_eng.apk',
+        size: '9MB',
+        version: '2.0',
+        description: 'ইনভেন্টরি ম্যানেজমেন্ট, সেলস রিপোর্টিং ও কাস্টমার ম্যানেজমেন্টসহ উন্নত POS সলিউশন।',
+        category: 'pos',
+        icon: 'https://www.retailpro.com/images/index/Retail-Pro-mobile-point-of-sale.jpg'  // রিটেইল POS
+    },
+    {
+        name: 'বয়স ক্যালকুলেটর',
+        slug: 'age_calculator.apk',
+        size: '3MB',
+        version: '1.1',
+        description: 'জন্ম তারিখ থেকে সঠিক বয়স গণনা। বছর, মাস, দিন - সবকিছুর সঠিক হিসাব।',
+        category: 'calculator',
+        icon: 'https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/c4164278-cd28-45f6-ba4d-e36c931e857f/2986233484/bangla-age-calculator-screenshot.png'  // বাংলা বয়স ক্যালকুলেটর
+    },
+    {
+        name: 'বাংলা ঘড়ি',
+        slug: 'Bengali_Clock.apk',
+        size: '4MB',
+        version: '1.2',
+        description: 'বাংলা তারিখ ও সময় দেখার অ্যাপ। বাংলা মাস, দিন, সাল সহ সম্পূর্ণ বাংলা ক্যালেন্ডার।',
+        category: 'utility',
+        icon: 'https://play-lh.googleusercontent.com/OxIoBbY_AmF6AtvEwfrGnmOpbRzKhwMZB2HvqkOXxXtxqRpsLS80LvaOlwsnM5nWueA=w526-h296-rw'  // বাংলা ক্যালেন্ডার
+    },
+    {
+        name: 'কনভার্ট ক্যালকুলেটর',
+        slug: 'convert_calculator.apk',
+        size: '5MB',
+        version: '1.0',
+        description: 'মুদ্রা, দৈর্ঘ্য, ওজন, তাপমাত্রা রূপান্তর। ডলার-টাকা, কিলো-পাউন্ড সহজে রূপান্তর করুন।',
+        category: 'calculator',
+        icon: 'https://play-lh.googleusercontent.com/N9lh1181r2pfhhpJePS-mjJpD-NJQqLRPzeDYyLGcxgeRka2Jg2l01skD3ADTfTxFsI=w526-h296-rw'  // ইউনিট কনভার্টার
+    },
+    {
+        name: 'খরচের খাতা',
+        slug: 'khorocher_khata.apk',
+        size: '5MB',
+        version: '1.0',
+        description: 'নিত্যদিনের আয়-ব্যয়ের হিসাব রাখার অ্যাপ। মাসিক বাজেট, সঞ্চয়, খরচ ট্র্যাকিং।',
+        category: 'utility',
+        icon: 'https://images.sftcdn.net/images/t_app-cover-s-16-9,f_auto/p/43719653-43f9-470c-bda8-6d9f6aee4c4f/1267555919/hisab-khata-screenshot'  // হিসাব খাতা
+    },
+    {
+        name: 'প্রেসক্রিপশন',
+        slug: 'prescription.apk',
+        size: '4MB',
+        version: '1.0',
+        description: 'ডাক্তারদের জন্য প্রেসক্রিপশন লেখার অ্যাপ। রোগীর তথ্য, ঔষধের তালিকা, নির্দেশাবলী সহজে লিখুন।',
+        category: 'health',
+        icon: 'https://www.shutterstock.com/image-vector/rx-icon-vector-web-computer-260nw-2631382463.jpg'  // প্রেসক্রিপশন Rx আইকন
+    },
+    {
+        name: 'কম্পাস কাবা',
+        slug: 'Compass_kaba.apk',
+        size: '6MB',
+        version: '1.0',
+        description: 'সঠিক কিবলা দিক নির্দেশনা। নামাজের সময়, কিবলা দিক, মসজিদের অবস্থান - মুসলিম ব্যবহারকারীদের জন্য বিশেষ অ্যাপ।',
+        category: 'utility',
+        icon: 'https://i.ytimg.com/vi/BVrzGq41RJ4/hqdefault.jpg'  // কিবলা কম্পাস
+    }
+];
 
         const faqData = [
             { 
