@@ -13,14 +13,6 @@
 
 ---
 
-## 📱 Available Apps (All Free & Offline)
-
-| App | Description | Download |
-|-----|-------------|--------|
-| **শিশু গণিত** (Shishu Gonit) 🧮 | Interactive math learning app for young children (ages 5–8). Teaches numbers, addition, subtraction, and more in Bengali. | [`shishu-gonit-v1.0.apk`](https://samadul2011.github.io/nahar-apps/shishu-gonit-v1.0.apk) |
-| **ব্যাকরণ সহায়ক** (Grammar Sahayok) 📚 | Learn Bengali grammar step-by-step: alphabet, word formation, sentence structure — all in clear Bengali. | [`grammar-sahayok-v1.0.apk`](https://samadul2011.github.io/nahar-apps/grammar-sahayok-v1.0.apk) |
-| **বাংলা ক্যালকুলেটর** 🧮 | Full-featured calculator with Bangla interface. Supports basic and scientific calculations. | [`bengali-calculator-v1.0.apk`](https://samadul2011.github.io/nahar-apps/bengali-calculator-v1.0.apk) |
-| **BMI ক্যালকুলেটর** ⚖️ | Calculate your Body Mass Index (BMI) instantly with health guidance based on WHO standards. | [`bmi-calculator-v1.0.apk`](https://samadul2011.github.io/nahar-apps/bmi-calculator-v1.0.apk) |
 
 > ✅ **All apps are 100% free, ad-free, and work offline.**  
 > 📲 **Designed specifically for Bangladeshi users** — Bangla language, local context, low-data optimization.
