@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg2)"/>
+  <text x="80" y="220" font-family="Noto Sans Bengali, Hind Siliguri, sans-serif" font-size="70" font-weight="700" fill="#fff">
+    নাহার অ্যাপস
+  </text>
+  <text x="80" y="310" font-family="Noto Sans Bengali, Hind Siliguri, sans-serif" font-size="40" fill="#dbeafe">
+    ১২টি ফ্রি বাংলা অ্যান্ড্রয়েড অ্যাপস
+  </text>
+</svg>
