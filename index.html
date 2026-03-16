@@ -157,6 +157,44 @@
         .text-balance {
             text-wrap: balance;
         }
+        .playstore-btn {
+            position: relative;
+            isolation: isolate;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .playstore-btn:hover {
+            transform: translateY(-1px);
+        }
+        .playstore-btn:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 4px #ffffff, 0 0 0 8px #16a34a, 0 14px 30px rgba(22, 163, 74, 0.45);
+            animation: playstore-focus-pulse 1s ease-in-out infinite;
+        }
+        .playstore-btn::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 9999px;
+            z-index: -1;
+            opacity: 0;
+            background: radial-gradient(circle, rgba(74, 222, 128, 0.45), rgba(74, 222, 128, 0));
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+        }
+        .playstore-btn:focus-visible::after {
+            opacity: 1;
+        }
+        @keyframes playstore-focus-pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
         /* Print styles */
         @media print {
             .no-print { display: none !important; }
@@ -225,6 +263,13 @@
                 <div class="mt-8 flex flex-wrap gap-4">
                     <a href="#apps" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-cyan-200 hover:shadow-xl transition-shadow" aria-label="১২টি অ্যাপস দেখুন এবং ডাউনলোড করুন">
                         ১২টি অ্যাপস দেখুন
+                    </a>
+                    <a href="https://play.google.com/store/apps/developer?id=Samadul+Hoque"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="playstore-btn inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-500 text-white font-semibold px-6 py-3 rounded-full shadow-lg shadow-green-200"
+                       aria-label="প্লে স্টোর থেকে নাহার অ্যাপস ডাউনলোড করুন">
+                        Play Store থেকে ডাউনলোড
                     </a>
                     <button id="scrollToGuide" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-300 font-semibold text-slate-700 hover:border-cyan-400 transition-colors">
                         ইন্সটলেশন শিখুন
